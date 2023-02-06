@@ -1,10 +1,21 @@
-function isLGSeven(number) {
-  const sub = number - 7;
-  if (sub < 7) {
-    return sub;
+function gemsToDiamond(firstFriendsGem, secondFriendsGem, thirdFriendsGem) {
+  if (
+    typeof firstFriendsGem !== "number" ||
+    typeof secondFriendsGem !== "number" ||
+    typeof thirdFriendsGem !== "number"
+  ) {
+    return "Input should be a number";
   }
-  if (sub >= 7) {
-    return number * 2;
+  const firstFriendsDiamond = firstFriendsGem * 21;
+  const secondFriendsDiamond = secondFriendsGem * 32;
+  const thirdFriendsDiamond = thirdFriendsGem * 43;
+  const totalDiamonds =
+    firstFriendsDiamond + secondFriendsDiamond + thirdFriendsDiamond;
+  if (totalDiamonds >= 2000) {
+    return totalDiamonds - 2000;
+  } else {
+    return totalDiamonds;
   }
 }
-console.log(isLGSeven(15));
+const result = gemsToDiamond("ss", 200, 50);
+console.log(result);
